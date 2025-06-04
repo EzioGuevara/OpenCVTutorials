@@ -19,3 +19,4 @@ else:
     cv.destroyAllWindows()
 cv.destroyAllWindows()
 # Note: Ensure that 'IMG_3653.jpeg' exists in the same directory as this script.
+#test
