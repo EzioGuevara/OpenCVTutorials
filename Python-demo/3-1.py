@@ -1,8 +1,7 @@
-import BLUE
 import numpy as np
 import cv2 as cv
 from Cython.Shadow import returns
-
+#img1 = cv.imread('opencv-logo.png')
 img = cv.imread('gold.bmp')
 if img is  None:
     returns()
@@ -46,7 +45,7 @@ replicate  = cv.copyMakeBorder(img,10,10,10,10,cv.BORDER_REPLICATE)
 reflect = cv.copyMakeBorder(img,10,10,10,10,cv.BORDER_REFLECT)
 reflect_101 = cv.copyMakeBorder(img,10,10,10,10,cv.BORDER_REFLECT_101)
 warp = cv.copyMakeBorder(img,10,10,10,10,cv.BORDER_WRAP)
-constant= cv.copyMakeBorder(img,10,10,10,10,cv.BORDER_CONSTANT,value=BLUE)
+constant= cv.copyMakeBorder(img,10,10,10,10,cv.BORDER_CONSTANT)
 
 cv.imshow('MC',img)
 cv.imshow('MC_replicate',replicate)
