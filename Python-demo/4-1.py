@@ -9,12 +9,17 @@ if not frame :
 
 hsv = cv.cvtColor(frame,cv.COLOR_BGR2HSV)
 #定义HSV中蓝色的范围
-lower_blue = np.array([50,50,50])
-upper_blue = np.array([130,255,255])
+lower_blue = np.array([0,50,50])
+upper_blue = np.array([360,255,255])
 #设置HSV的阈值使得只取蓝色
 mask = cv.inRange(hsv,lower_blue,upper_blue)
 #将掩膜和图像逐像素相加
 rlt = cv.bitwise_and(frame,frame,mask = mask)
+
+#
+# green = np.uint8([[[0,255,0]]])
+# hsv_green = cv.cvtColor(green,cv.COLOR_BGR2HSV)
+# print(hsv_green)
 
 cv.imshow('mask',mask)
 cv.imshow('rlt',rlt)
