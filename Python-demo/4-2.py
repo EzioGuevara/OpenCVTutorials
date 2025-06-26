@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2 as cv
-img = cv.imread('messi5.jpg',0)
+img = cv.imread('data/messi5.jpg', 0)
 rows,cols = img.shape
 
 #旋转图像
@@ -19,7 +19,7 @@ height,width = img.shape[:2]
 res = cv.resize(img,(2*width,2*height),interpolation=cv.INTER_CUBIC)
 
 #透视变换1
-img1 = cv.imread('chessboard.png')
+img1 = cv.imread('data/chessboard.png')
 rows,cols,sh = img1.shape
 pts1 = np.float32([[50,50],[200,50],[50,200]])
 pts2 = np.float32([[10,100],[200,50],[100,250]])
@@ -28,7 +28,7 @@ dst_aff1 = cv.warpAffine(img1,m,(cols,rows))
 dst_aff1 = cv.resize(dst_aff1,None,fx = 0.5,fy = 0.5,interpolation= cv.INTER_CUBIC)
 
 #透视变换2
-img2 = cv.imread('sudoku.png')
+img2 = cv.imread('data/sudoku.png')
 rows,cols,sh = img2.shape
 pts1 = np.float32([[56,65],[368,52],[28,387],[389,390]])
 pts2 = np.float32([[0,0],[300,0],[0,300],[300,300]])
